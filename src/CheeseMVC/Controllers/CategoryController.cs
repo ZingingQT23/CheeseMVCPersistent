@@ -33,7 +33,7 @@ namespace CheeseMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                CheeseCategory newCategory = new CheeseCategory;
+                CheeseCategory newCategory = new CheeseCategory();
                 newCategory.Name = addCheeseViewModel.Name;
                 context.Categories.Add(newCategory);
                 context.SaveChanges();
