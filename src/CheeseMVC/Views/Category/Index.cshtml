@@ -1,0 +1,7 @@
+﻿@model CheeseMVC.Models.CheeseCategory
+
+@foreach(var category in categories){
+    <ul>@category</ul>
+}
+
+<p><a asp-controller="Category" asp-action="Add">Add Category</a></p>
