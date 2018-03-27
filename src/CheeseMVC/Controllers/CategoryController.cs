@@ -18,29 +18,29 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Index()
         {
-            List <CheeseCategory> categories = context.Categories.ToList();
+            List<CheeseCategory> categories = context.Categories.ToList();
             return View(categories);
         }
 
         public IActionResult Add()
         {
-            AddCheeseViewModel addCheeseViewModel = new AddCheeseViewModel();
-            return View(addCheeseViewModel);
+            AddCategoryViewModel addCategoryViewModel = new AddCategoryViewModel();
+            return View(addCategoryViewModel);
         }
 
         [HttpPost]
-        public IActionResult Add(AddCheeseViewModel addCheeseViewModel)
+        public IActionResult Add(AddCategoryViewModel addCategoryViewModel)
         {
             if (ModelState.IsValid)
             {
                 CheeseCategory newCategory = new CheeseCategory();
-                newCategory.Name = addCheeseViewModel.Name;
+                newCategory.Name = addCategoryViewModel.Name;
                 context.Categories.Add(newCategory);
                 context.SaveChanges();
                 return Redirect("/Category");
             }
 
-            return View(addCheeseViewModel);
+            return View(addCategoryViewModel);
         }
 
     }

@@ -2,6 +2,10 @@
 
 <h1>Add Cheese</h1>
 
+@if (Model.Categories == null) { 
+    <h6>THERE ARE NO CATEGORIES</h6>
+}
+
 <form asp-controller="Cheese" asp-action="Add" method="post">
 
     <div class="form-group">
@@ -16,8 +20,8 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Type"></label>
-        <select asp-for="Type" asp-items="Model.CheeseTypes"></select>
+        <label asp-for="CategoryID"></label>
+        <select asp-for="CategoryID" asp-items="Model.Categories"></select>
     </div>
 
     <input type="submit" value="Add Cheese" />

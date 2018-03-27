@@ -1,9 +1,10 @@
-﻿@model CheeseMVC.Models.CheeseCategory
+﻿@model IEnumerable<CheeseMVC.Models.CheeseCategory>
 
-@if (categories != null)
+@if (Model != null)
 {
-    foreach(var category in categories){
-        <ul>@category</ul>
+    foreach (var category in Model)
+    {
+        <ul>@category.Name</ul>
     }
 }
 

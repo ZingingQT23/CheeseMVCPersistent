@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace CheeseMVC.Models
 {
     public class CheeseCategory
@@ -10,6 +12,12 @@ namespace CheeseMVC.Models
         }
 
         public string Name
+        {
+            get;
+            set;
+        }
+
+        public List<Cheese> Cheeses
         {
             get;
             set;
